@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Grammar - English Learning</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+            color: #1e293b;
+        }
+
+        nav {
+            background: linear-gradient(90deg, #1e3a8a, #2563eb);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #bfdbfe;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 45px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            font-size: 46px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 19px;
+            margin-bottom: 40px;
+        }
+
+        .lesson {
+            background: white;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            max-width: 900px;
+        }
+
+        .lesson h2 {
+            color: #2563eb;
+            font-size: 30px;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .formula {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        .forms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .form-box {
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .positive {
+            background: #ecfdf5;
+            border-left: 5px solid #10b981;
+        }
+
+        .negative {
+            background: #fef2f2;
+            border-left: 5px solid #ef4444;
+        }
+
+        .question {
+            background: #fff7ed;
+            border-left: 5px solid #f97316;
+        }
+
+        .form-box h3 {
+            margin-top: 0;
+        }
+
+        .example {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .exercise {
+            background: #f8fafc;
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .exercise h3 {
+            color: #1e3a8a;
+        }
+
+        .option {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 13px;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        .option:hover {
+            background: #eff6ff;
+            border-color: #2563eb;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .reset {
+            margin-top: 15px;
+            padding: 11px 20px;
+            border: none;
+            border-radius: 20px;
+            background: #64748b;
+            color: white;
+            cursor: pointer;
+        }
+
+        .reset:hover {
+            background: #475569;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 25px;
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 36px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .lesson {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="vocabulary.html">Vocabulary</a>
+        <a href="grammar.html">Grammar</a>
+        <a href="#">About</a>
+    </nav>
+
+
+    <div class="container">
+
+        <h1>📖 Grammar</h1>
+
+        <p class="subtitle">
+            Learn grammar and test your knowledge
+        </p>
+
+
+        <!-- PRESENT SIMPLE -->
+
+        <div class="lesson">
+
+            <h2>1️⃣ Present Simple</h2>
+
+            <p class="description">
+                برای عادت‌ها، کارهای روزمره و واقعیت‌ها استفاده می‌شود.
+            </p>
+
+            <div class="formula">
+                <b>Formula:</b><br><br>
+
+                I / You / We / They + verb<br>
+                He / She / It + verb + s
+            </div>
+
+
+            <div class="forms">
+
+                <div class="form-box positive">
+                    <h3>✅ Positive</h3>
+                    <p class="example">
+                        I play football.
+                        <br>
+                        من فوتبال بازی می‌کنم.
+                    </p>
+                </div>
+
+                <div class="form-box negative">
+                    <h3>❌ Negative</h3>
+                    <p class="example">
+                        I do not play football.
+                        <br>
+                        من فوتبال بازی نمی‌کنم.
+                    </p>
+                </div>
+
+                <div class="form-box question">
+                    <h3>❓ Question</h3>
+                    <p class="example">
+                        Do you play football?
+                        <br>
+                        آیا فوتبال بازی می‌کنی؟
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="exercise">
+
+                <h3>🧠 Exercise</h3>
+
+                <p>
+                    She _____ English every day.
+                </p>
+
+                <button class="option" onclick="checkAnswer(this, false)">
+                    A) study
+                </button>
+
+                <button class="option" onclick="checkAnswer(this, true)">
+                    B) studies
+                </button>
+
+                <button class="option" onclick="checkAnswer(this, false)">
+                    C) studying
+                </button>
+
+                <p class="result"></p>
+
+                <button class="reset" onclick="resetQuestion(this)">
+                    Reset
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PAST SIMPLE -->
+
+        <div class="lesson">
+
+            <h2>2️⃣ Past Simple</h2>
+
+            <p class="description">
+                برای کارهایی استفاده می‌شود که در گذشته اتفاق افتاده و تمام شده‌اند.
+            </p>
+
+            <div class="formula">
+                <b>Formula:</b><br><br>
+
+                Subject + Past Verb
+            </div>
+
+
+            <div class="forms">
+
+                <div class="form-box positive">
+                    <h3>✅ Positive</h3>
+                    <p class="example">
+                        I played football.
+                        <br>
+                        من فوتبال بازی کردم.
+                    </p>
+                </div>
+
+                <div class="form-box negative">
+                    <h3>❌ Negative</h3>
+                    <p class="example">
+                        I did not play football.
+                        <br>
+                        من فوتبال بازی نکردم.
+                    </p>
+                </div>
+
+                <div class="form-box question">
+                    <h3>❓ Question</h3>
+                    <p class="example">
+                        Did you play football?
+                        <br>
+                        آیا فوتبال بازی کردی؟
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="exercise">
+
+                <h3>🧠 Exercise</h3>
+
+                <p>
+                    They _____ football yesterday.
+                </p>
+
+                <button class="option" onclick="checkAnswer(this, false)">
+                    A) play
+                </button>
+
+                <button class="option" onclick="checkAnswer(this, true)">
+                    B) played
+                </button>
+
+                <button class="option" onclick="checkAnswer(this, false)">
+                    C) playing
+                </button>
+
+                <p class="result"></p>
+
+                <button class="reset" onclick="resetQuestion(this)">
+                    Reset
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FUTURE SIMPLE -->
+
+        <div class="lesson">
+
+            <h2>3️⃣ Future Simple</h2>
+
+            <p class="description">
+                برای کارهایی که در آینده اتفاق خواهند افتاد استفاده می‌شود.
+            </p>
+
+            <div class="formula">
+                <b>Formula:</b><br><br>
+
+                Subject + will + verb
+            </div>
+
+
+            <div class="forms">
+
+                <div class="form-box positive">
+                    <h3>✅ Positive</h3>
+                    <p class="example">
+                        I will study tomorrow.
+                        <br>
+                        من فردا مطالعه خواهم کرد.
+                    </p>
+                </div>
+
+                <div class="form-box negative">
+                    <h3>❌ Negative</h3>
+                    <p class="example">
+                        I will not study tomorrow.
+                        <br>
+                        من فردا مطالعه نخواهم کرد.
+                    </p>
+                </div>
+
+                <div class="form-box question">
+                    <h3>❓ Question</h3>
+                    <p class="example">
+                        Will you study tomorrow?
+                        <br>
+                        آیا فردا مطالعه خواهی کرد؟
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="exercise">
+
+                <h3>🧠 Exercise</h3>
+
+                <p>
+                    I _____ visit London next year.
+                </p>
+
+                <button class="option" onclick="checkAnswer(this, false)">
+                    A) am
+                </button>
+
+                <button class="option" onclick="checkAnswer(this, false)">
+                    B) did
+                </button>
+
+                <button class="option" onclick="checkAnswer(this, true)">
+                    C) will
+                </button>
+
+                <p class="result"></p>
+
+                <button class="reset" onclick="resetQuestion(this)">
+                    Reset
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRESENT CONTINUOUS -->
+
+        <div class="lesson">
+
+            <h2>4️⃣ Present Continuous</h2>
+
+            <p class="description">
+                برای کاری استفاده می‌شود که همین الان در حال انجام شدن است.
+            </p>
+
+            <div class="formula">
+                <b>Formula:</b><br><br>
+
+                Subject + am / is / are + verb + ing
+            </div>
+
+
+            <div class="forms">
+
+                <div class="form-box positive">
+                    <h3>✅ Positive</h3>
+                    <p class="example">
+                        I am studying.
+                        <br>
+                        من در حال مطالعه هستم.
+                    </p>
+                </div>
+
+                <div class="form-box negative">
+                    <h3>❌ Negative</h3>
+                    <p class="example">
+                        I am not studying.
+                        <br>
+                        من در حال مطالعه نیستم.
+                    </p>
+                </div>
+
+                <div class="form-box question">
+                    <h3>❓ Question</h3>
+                    <p class="example">
+                        Are you studying?
+                        <br>
+                        آیا در حال مطالعه هستی؟
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="exercise">
+
+                <h3>🧠 Exercise</h3>
+
+                <p>
+                    She _____ watching TV now.
+                </p>
+
+                <button class="option" onclick="checkAnswer(this, false)">
+                    A) are
+                </button>
+
+                <button class="option" onclick="checkAnswer(this, true)">
+                    B) is
+                </button>
+
+                <button class="option" onclick="checkAnswer(this, false)">
+                    C) am
+                </button>
+
+                <p class="result"></p>
+
+                <button class="reset" onclick="resetQuestion(this)">
+                    Reset
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRESENT PERFECT -->
+
+        <div class="lesson">
+
+            <h2>5️⃣ Present Perfect</h2>
+
+            <p class="description">
+                برای کاری که در گذشته انجام شده ولی به زمان حال ارتباط دارد استفاده می‌شود.
+            </p>
+
+            <div class="formula">
+                <b>Formula:</b><br><br>
+
+                Subject + have / has + past participle
+            </div>
+
+
+            <div class="forms">
+
+                <div class="form-box positive">
+                    <h3>✅ Positive</h3>
+                    <p class="example">
+                        I have finished my homework.
+                        <br>
+                        تکالیفم را تمام کرده‌ام.
+                    </p>
+                </div>
+
+                <div class="form-box negative">
+                    <h3>❌ Negative</h3>
+                    <p class="example">
+                        I have not finished my homework.
+                        <br>
+                        تکالیفم را تمام نکرده‌ام.
+                    </p>
+                </div>
+
+                <div class="form-box question">
+                    <h3>❓ Question</h3>
+                    <p class="example">
+                        Have you finished your homework?
+                        <br>
+                        آیا تکالیفت را تمام کرده‌ای؟
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="exercise">
+
+                <h3>🧠 Exercise</h3>
+
+                <p>
+                    She _____ finished her homework.
+                </p>
+
+                <button class="option" onclick="checkAnswer(this, false)">
+                    A) have
+                </button>
+
+                <button class="option" onclick="checkAnswer(this, true)">
+                    B) has
+                </button>
+
+                <button class="option" onclick="checkAnswer(this, false)">
+                    C) is
+                </button>
+
+                <p class="result"></p>
+
+                <button class="reset" onclick="resetQuestion(this)">
+                    Reset
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        English Learning © 2026
+    </footer>
+
+
+    <script>
+
+        function checkAnswer(button, correct) {
+
+            let exercise = button.parentElement;
+
+            let result = exercise.querySelector(".result");
+
+            let buttons = exercise.querySelectorAll(".option");
+
+            buttons.forEach(function(item) {
+                item.disabled = true;
+            });
+
+            if (correct) {
+
+                result.innerHTML = "✅ Correct! Great job!";
+                result.style.color = "#16a34a";
+
+            } else {
+
+                result.innerHTML = "❌ Wrong answer. Try again!";
+                result.style.color = "#dc2626";
+
+            }
+        }
+
+
+        function resetQuestion(button) {
+
+            let exercise = button.parentElement;
+
+            let result = exercise.querySelector(".result");
+
+            let buttons = exercise.querySelectorAll(".option");
+
+            result.innerHTML = "";
+
+            buttons.forEach(function(item) {
+                item.disabled = false;
+            });
+        }
+
+    </script>
+
+</body>
+</html>
