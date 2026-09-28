@@ -1,94 +1,1285 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Vocabulary - English Learning</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>English Learning - 500 Vocabulary Words</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #eef6ff;
-            text-align: center;
+
+        * {
+            box-sizing: border-box;
         }
 
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dbeafe, #f8fafc);
+            color: #1e293b;
+        }
+
+        /* NAVIGATION */
+
         nav {
-            background-color: #1e3a8a;
+            background: linear-gradient(90deg, #1e3a8a, #2563eb);
             padding: 20px;
-            text-align: left;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-right: 30px;
+            margin: 0 15px;
             font-size: 18px;
+            font-weight: bold;
         }
 
         nav a:hover {
-            color: #60a5fa;
+            color: #bfdbfe;
         }
 
-        h1 {
-            color: #1e3a8a;
-            font-size: 40px;
-            margin-top: 40px;
+        /* HEADER */
+
+        .header {
+            text-align: center;
+            padding: 55px 20px 35px;
+            background: linear-gradient(
+                135deg,
+                #1e3a8a,
+                #2563eb
+            );
+            color: white;
         }
+
+        .header h1 {
+            font-size: 48px;
+            margin: 0 0 15px;
+        }
+
+        .header p {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        /* SEARCH */
+
+        .search-area {
+            max-width: 850px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        #searchBox {
+            width: 100%;
+            padding: 18px 22px;
+            border: none;
+            border-radius: 35px;
+            font-size: 18px;
+            outline: none;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        #searchBox:focus {
+            box-shadow: 0 8px 30px rgba(37,99,235,0.3);
+        }
+
+        /* CATEGORY */
+
+        .category-area {
+            text-align: center;
+            margin: 20px auto 35px;
+            padding: 0 20px;
+        }
+
+        .category-button {
+            border: none;
+            background: white;
+            color: #2563eb;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .category-button:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* COUNTER */
+
+        .counter {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+        }
+
+        /* CONTAINER */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px 60px;
+        }
+
+        /* WORD GRID */
+
+        .words {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* WORD CARD */
 
         .word {
-            background-color: white;
-            width: 350px;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border-left: 5px solid #2563eb;
+        }
+
+        .word:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .word-number {
+            color: #94a3b8;
+            font-size: 14px;
+            font-weight: bold;
         }
 
         .word h2 {
             color: #2563eb;
+            margin: 8px 0;
+            font-size: 28px;
         }
 
-        .word p {
-            font-size: 20px;
-            color: #444;
+        .meaning {
+            color: #475569;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
+
+        .category {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .example {
+            background: #f8fafc;
+            padding: 13px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .translation {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .speak-button {
+            border: none;
+            padding: 9px 13px;
+            border-radius: 18px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        .american {
+            background: #2563eb;
+        }
+
+        .british {
+            background: #7c3aed;
+        }
+
+        .speak-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* NO RESULT */
+
+        #noResult {
+            display: none;
+            text-align: center;
+            font-size: 22px;
+            color: #64748b;
+            padding: 50px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer p {
+            margin: 6px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .header p {
+                font-size: 17px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 16px;
+            }
+
+        }
+
     </style>
 </head>
 
 <body>
 
+
+    <!-- NAVIGATION -->
+
     <nav>
-        <a href="index.html">Home</a>
-        <a href="vocabulary.html">Vocabulary</a>
-        <a href="grammar.html">Grammar</a>
-        <a href="#">About</a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="vocabulary.html">
+            Vocabulary
+        </a>
+
+        <a href="grammar.html">
+            Grammar
+        </a>
+
+        <a href="#">
+            About
+        </a>
+
     </nav>
 
-    <h1>Vocabulary 📚</h1>
 
-    <div class="word">
-        <h2>Hello</h2>
-        <p>سلام</p>
+    <!-- HEADER -->
+
+    <section class="header">
+
+        <h1>
+            📚 500 English Words
+        </h1>
+
+        <p>
+            Build your English vocabulary step by step.
+        </p>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-area">
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="🔎 Search English words or Persian meanings..."
+            oninput="searchWords()"
+        >
+
     </div>
 
-    <div class="word">
-        <h2>Friend</h2>
-        <p>دوست</p>
+
+    <!-- CATEGORY BUTTONS -->
+
+    <div class="category-area">
+
+        <button
+            class="category-button"
+            onclick="showAll()">
+            All
+        </button>
+
+        <button
+            class="category-button"
+            onclick="filterCategory('Daily Life')">
+            🏠 Daily Life
+        </button>
+
+        <button
+            class="category-button"
+            onclick="filterCategory('School')">
+            🎓 School
+        </button>
+
+        <button
+            class="category-button"
+            onclick="filterCategory('Technology')">
+            💻 Technology
+        </button>
+
+        <button
+            class="category-button"
+            onclick="filterCategory('People')">
+            👨‍👩‍👦 People
+        </button>
+
+        <button
+            class="category-button"
+            onclick="filterCategory('Food')">
+            🍎 Food
+        </button>
+
+        <button
+            class="category-button"
+            onclick="filterCategory('Travel')">
+            ✈️ Travel
+        </button>
+
+        <button
+            class="category-button"
+            onclick="filterCategory('Nature')">
+            🌳 Nature
+        </button>
+
+        <button
+            class="category-button"
+            onclick="filterCategory('Verbs')">
+            🏃 Verbs
+        </button>
+
+        <button
+            class="category-button"
+            onclick="filterCategory('Adjectives')">
+            ⭐ Adjectives
+        </button>
+
+        <button
+            class="category-button"
+            onclick="filterCategory('Everyday')">
+            💬 Everyday
+        </button>
+
     </div>
 
-    <div class="word">
-        <h2>School</h2>
-        <p>مدرسه</p>
+
+    <!-- COUNTER -->
+
+    <div class="counter">
+
+        Showing
+        <span id="count">500</span>
+        words
+
     </div>
 
-    <div class="word">
-        <h2>Book</h2>
-        <p>کتاب</p>
+
+    <!-- WORDS -->
+
+    <div class="container">
+
+        <div
+            class="words"
+            id="wordContainer">
+        </div>
+
+        <div id="noResult">
+
+            ❌ No words found.
+
+        </div>
+
     </div>
 
-    <div class="word">
-        <h2>Computer</h2>
-        <p>کامپیوتر</p>
-    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            English Learning © 2026
+        </p>
+
+        <p>
+            500 Words • Learn • Practice • Improve
+        </p>
+
+    </footer>
+
+
+<script>
+
+
+/* ==========================================
+   500 ENGLISH WORDS
+========================================== */
+
+
+const vocabulary = [
+
+/* DAILY LIFE 1-50 */
+
+["Hello","سلام","Daily Life"],
+["Goodbye","خداحافظ","Daily Life"],
+["Morning","صبح","Daily Life"],
+["Afternoon","بعدازظهر","Daily Life"],
+["Evening","عصر","Daily Life"],
+["Night","شب","Daily Life"],
+["Day","روز","Daily Life"],
+["Week","هفته","Daily Life"],
+["Month","ماه","Daily Life"],
+["Year","سال","Daily Life"],
+["Today","امروز","Daily Life"],
+["Tomorrow","فردا","Daily Life"],
+["Yesterday","دیروز","Daily Life"],
+["Time","زمان","Daily Life"],
+["Hour","ساعت","Daily Life"],
+["Minute","دقیقه","Daily Life"],
+["Second","ثانیه","Daily Life"],
+["Home","خانه","Daily Life"],
+["House","خانه","Daily Life"],
+["Room","اتاق","Daily Life"],
+["Kitchen","آشپزخانه","Daily Life"],
+["Bathroom","حمام","Daily Life"],
+["Bedroom","اتاق خواب","Daily Life"],
+["Garden","باغ","Daily Life"],
+["Door","در","Daily Life"],
+["Window","پنجره","Daily Life"],
+["Chair","صندلی","Daily Life"],
+["Table","میز","Daily Life"],
+["Bed","تخت","Daily Life"],
+["Light","چراغ / نور","Daily Life"],
+["Key","کلید","Daily Life"],
+["Bag","کیف","Daily Life"],
+["Clothes","لباس","Daily Life"],
+["Shirt","پیراهن","Daily Life"],
+["Shoes","کفش","Daily Life"],
+["Money","پول","Daily Life"],
+["Wallet","کیف پول","Daily Life"],
+["Street","خیابان","Daily Life"],
+["City","شهر","Daily Life"],
+["Country","کشور","Daily Life"],
+["Place","مکان","Daily Life"],
+["Name","نام","Daily Life"],
+["Number","عدد / شماره","Daily Life"],
+["Address","آدرس","Daily Life"],
+["Problem","مشکل","Daily Life"],
+["Idea","ایده","Daily Life"],
+["Thing","چیز","Daily Life"],
+["Way","راه","Daily Life"],
+["Life","زندگی","Daily Life"],
+["World","جهان","Daily Life"],
+
+
+/* SCHOOL 51-100 */
+
+["School","مدرسه","School"],
+["Teacher","معلم","School"],
+["Student","دانش‌آموز","School"],
+["Class","کلاس","School"],
+["Lesson","درس","School"],
+["Book","کتاب","School"],
+["Notebook","دفتر","School"],
+["Pen","خودکار","School"],
+["Pencil","مداد","School"],
+["Eraser","پاک‌کن","School"],
+["Ruler","خط‌کش","School"],
+["Desk","میز تحریر","School"],
+["Board","تخته","School"],
+["Question","سؤال","School"],
+["Answer","پاسخ","School"],
+["Test","آزمون","School"],
+["Exam","امتحان","School"],
+["Homework","تکلیف","School"],
+["Project","پروژه","School"],
+["Subject","موضوع / درس","School"],
+["English","انگلیسی","School"],
+["Math","ریاضی","School"],
+["Science","علوم","School"],
+["History","تاریخ","School"],
+["Geography","جغرافیا","School"],
+["Computer","کامپیوتر","School"],
+["Education","آموزش","School"],
+["University","دانشگاه","School"],
+["College","دانشکده","School"],
+["Course","دوره","School"],
+["Classroom","کلاس درس","School"],
+["Library","کتابخانه","School"],
+["Dictionary","فرهنگ لغت","School"],
+["Word","کلمه","School"],
+["Sentence","جمله","School"],
+["Grammar","دستور زبان","School"],
+["Language","زبان","School"],
+["Reading","خواندن","School"],
+["Writing","نوشتن","School"],
+["Listening","شنیدن","School"],
+["Speaking","صحبت کردن","School"],
+["Exercise","تمرین","School"],
+["Practice","تمرین","School"],
+["Grade","نمره","School"],
+["Mark","نمره","School"],
+["Page","صفحه","School"],
+["Chapter","فصل","School"],
+["Learn","یاد گرفتن","School"],
+["Study","مطالعه کردن","School"],
+
+
+/* TECHNOLOGY 101-150 */
+
+["Computer","کامپیوتر","Technology"],
+["Laptop","لپ‌تاپ","Technology"],
+["Phone","تلفن","Technology"],
+["Smartphone","گوشی هوشمند","Technology"],
+["Tablet","تبلت","Technology"],
+["Screen","صفحه نمایش","Technology"],
+["Keyboard","صفحه‌کلید","Technology"],
+["Mouse","ماوس","Technology"],
+["Monitor","مانیتور","Technology"],
+["Printer","پرینتر","Technology"],
+["Camera","دوربین","Technology"],
+["Speaker","بلندگو","Technology"],
+["Headphone","هدفون","Technology"],
+["Internet","اینترنت","Technology"],
+["Website","وب‌سایت","Technology"],
+["Browser","مرورگر","Technology"],
+["Software","نرم‌افزار","Technology"],
+["Hardware","سخت‌افزار","Technology"],
+["Program","برنامه","Technology"],
+["Programming","برنامه‌نویسی","Technology"],
+["Code","کد","Technology"],
+["File","فایل","Technology"],
+["Folder","پوشه","Technology"],
+["Data","داده","Technology"],
+["Password","رمز عبور","Technology"],
+["Account","حساب کاربری","Technology"],
+["Email","ایمیل","Technology"],
+["Message","پیام","Technology"],
+["Video","ویدئو","Technology"],
+["Photo","عکس","Technology"],
+["Game","بازی","Technology"],
+["Console","کنسول","Technology"],
+["Xbox","ایکس‌باکس","Technology"],
+["Server","سرور","Technology"],
+["Network","شبکه","Technology"],
+["Keyboard","صفحه‌کلید","Technology"],
+["Download","دانلود","Technology"],
+["Upload","آپلود","Technology"],
+["Search","جست‌وجو","Technology"],
+["Click","کلیک کردن","Technology"],
+["Link","لینک","Technology"],
+["App","برنامه کاربردی","Technology"],
+["System","سیستم","Technology"],
+["Windows","ویندوز","Technology"],
+["Android","اندروید","Technology"],
+["Website","وب‌سایت","Technology"],
+["Internet","اینترنت","Technology"],
+["Robot","ربات","Technology"],
+["Machine","ماشین","Technology"],
+["Technology","فناوری","Technology"],
+
+
+/* PEOPLE 151-200 */
+
+["Person","شخص","People"],
+["People","مردم","People"],
+["Man","مرد","People"],
+["Woman","زن","People"],
+["Boy","پسر","People"],
+["Girl","دختر","People"],
+["Child","کودک","People"],
+["Baby","نوزاد","People"],
+["Father","پدر","People"],
+["Mother","مادر","People"],
+["Brother","برادر","People"],
+["Sister","خواهر","People"],
+["Son","پسر","People"],
+["Daughter","دختر","People"],
+["Family","خانواده","People"],
+["Friend","دوست","People"],
+["Neighbor","همسایه","People"],
+["Teacher","معلم","People"],
+["Doctor","پزشک","People"],
+["Nurse","پرستار","People"],
+["Driver","راننده","People"],
+["Police","پلیس","People"],
+["Worker","کارگر","People"],
+["Engineer","مهندس","People"],
+["Student","دانش‌آموز","People"],
+["Player","بازیکن","People"],
+["Leader","رهبر","People"],
+["Manager","مدیر","People"],
+["Customer","مشتری","People"],
+["Guest","مهمان","People"],
+["Owner","صاحب","People"],
+["King","پادشاه","People"],
+["Queen","ملکه","People"],
+["Captain","کاپیتان","People"],
+["Team","تیم","People"],
+["Group","گروه","People"],
+["Partner","شریک","People"],
+["Boyfriend","دوست‌پسر","People"],
+["Girlfriend","دوست‌دختر","People"],
+["Member","عضو","People"],
+["Personality","شخصیت","People"],
+["Name","نام","People"],
+["Age","سن","People"],
+["Family","خانواده","People"],
+["Friendship","دوستی","People"],
+["Community","جامعه","People"],
+["Leader","رهبر","People"],
+["Visitor","بازدیدکننده","People"],
+["Guest","مهمان","People"],
+["Human","انسان","People"],
+
+
+/* FOOD 201-250 */
+
+["Food","غذا","Food"],
+["Water","آب","Food"],
+["Milk","شیر","Food"],
+["Tea","چای","Food"],
+["Coffee","قهوه","Food"],
+["Juice","آبمیوه","Food"],
+["Bread","نان","Food"],
+["Rice","برنج","Food"],
+["Meat","گوشت","Food"],
+["Chicken","مرغ","Food"],
+["Fish","ماهی","Food"],
+["Egg","تخم‌مرغ","Food"],
+["Cheese","پنیر","Food"],
+["Butter","کره","Food"],
+["Sugar","شکر","Food"],
+["Salt","نمک","Food"],
+["Apple","سیب","Food"],
+["Orange","پرتقال","Food"],
+["Banana","موز","Food"],
+["Lemon","لیمو","Food"],
+["Grape","انگور","Food"],
+["Strawberry","توت‌فرنگی","Food"],
+["Potato","سیب‌زمینی","Food"],
+["Tomato","گوجه‌فرنگی","Food"],
+["Carrot","هویج","Food"],
+["Onion","پیاز","Food"],
+["Soup","سوپ","Food"],
+["Salad","سالاد","Food"],
+["Pizza","پیتزا","Food"],
+["Burger","برگر","Food"],
+["Sandwich","ساندویچ","Food"],
+["Cake","کیک","Food"],
+["Chocolate","شکلات","Food"],
+["Cookie","بیسکویت","Food"],
+["Ice Cream","بستنی","Food"],
+["Breakfast","صبحانه","Food"],
+["Lunch","ناهار","Food"],
+["Dinner","شام","Food"],
+["Restaurant","رستوران","Food"],
+["Kitchen","آشپزخانه","Food"],
+["Plate","بشقاب","Food"],
+["Glass","لیوان","Food"],
+["Cup","فنجان","Food"],
+["Bottle","بطری","Food"],
+["Fork","چنگال","Food"],
+["Spoon","قاشق","Food"],
+["Knife","چاقو","Food"],
+["Hungry","گرسنه","Food"],
+["Thirsty","تشنه","Food"],
+["Delicious","خوشمزه","Food"],
+
+
+/* TRAVEL 251-300 */
+
+["Travel","سفر","Travel"],
+["Trip","سفر","Travel"],
+["Airport","فرودگاه","Travel"],
+["Airplane","هواپیما","Travel"],
+["Train","قطار","Travel"],
+["Bus","اتوبوس","Travel"],
+["Taxi","تاکسی","Travel"],
+["Car","ماشین","Travel"],
+["Bicycle","دوچرخه","Travel"],
+["Motorcycle","موتورسیکلت","Travel"],
+["Road","جاده","Travel"],
+["Street","خیابان","Travel"],
+["Bridge","پل","Travel"],
+["Station","ایستگاه","Travel"],
+["Hotel","هتل","Travel"],
+["Room","اتاق","Travel"],
+["Ticket","بلیط","Travel"],
+["Passport","گذرنامه","Travel"],
+["Map","نقشه","Travel"],
+["Country","کشور","Travel"],
+["City","شهر","Travel"],
+["Village","روستا","Travel"],
+["Beach","ساحل","Travel"],
+["Mountain","کوه","Travel"],
+["River","رودخانه","Travel"],
+["Sea","دریا","Travel"],
+["Island","جزیره","Travel"],
+["Tourist","گردشگر","Travel"],
+["Guide","راهنما","Travel"],
+["Journey","سفر","Travel"],
+["Direction","جهت","Travel"],
+["Left","چپ","Travel"],
+["Right","راست","Travel"],
+["North","شمال","Travel"],
+["South","جنوب","Travel"],
+["East","شرق","Travel"],
+["West","غرب","Travel"],
+["Near","نزدیک","Travel"],
+["Far","دور","Travel"],
+["Arrive","رسیدن","Travel"],
+["Leave","ترک کردن","Travel"],
+["Visit","بازدید کردن","Travel"],
+["Explore","کاوش کردن","Travel"],
+["Return","برگشتن","Travel"],
+["Luggage","چمدان","Travel"],
+["Bag","کیف","Travel"],
+["Reservation","رزرو","Travel"],
+["Vacation","تعطیلات","Travel"],
+["Adventure","ماجراجویی","Travel"],
+["Destination","مقصد","Travel"],
+
+
+/* NATURE 301-350 */
+
+["Nature","طبیعت","Nature"],
+["Tree","درخت","Nature"],
+["Flower","گل","Nature"],
+["Plant","گیاه","Nature"],
+["Grass","چمن","Nature"],
+["Forest","جنگل","Nature"],
+["Mountain","کوه","Nature"],
+["River","رودخانه","Nature"],
+["Lake","دریاچه","Nature"],
+["Sea","دریا","Nature"],
+["Ocean","اقیانوس","Nature"],
+["Beach","ساحل","Nature"],
+["Island","جزیره","Nature"],
+["Sky","آسمان","Nature"],
+["Cloud","ابر","Nature"],
+["Rain","باران","Nature"],
+["Snow","برف","Nature"],
+["Wind","باد","Nature"],
+["Storm","طوفان","Nature"],
+["Sun","خورشید","Nature"],
+["Moon","ماه","Nature"],
+["Star","ستاره","Nature"],
+["Earth","زمین","Nature"],
+["Fire","آتش","Nature"],
+["Air","هوا","Nature"],
+["Animal","حیوان","Nature"],
+["Dog","سگ","Nature"],
+["Cat","گربه","Nature"],
+["Bird","پرنده","Nature"],
+["Horse","اسب","Nature"],
+["Cow","گاو","Nature"],
+["Sheep","گوسفند","Nature"],
+["Lion","شیر","Nature"],
+["Tiger","ببر","Nature"],
+["Elephant","فیل","Nature"],
+["Monkey","میمون","Nature"],
+["Fish","ماهی","Nature"],
+["Insect","حشره","Nature"],
+["Butterfly","پروانه","Nature"],
+["Garden","باغ","Nature"],
+["Park","پارک","Nature"],
+["Environment","محیط زیست","Nature"],
+["Weather","آب‌وهوا","Nature"],
+["Hot","گرم","Nature"],
+["Cold","سرد","Nature"],
+["Warm","گرم","Nature"],
+["Cool","خنک","Nature"],
+["Dry","خشک","Nature"],
+["Wet","خیس","Nature"],
+["Green","سبز","Nature"],
+
+
+/* VERBS 351-430 */
+
+["Be","بودن","Verbs"],
+["Have","داشتن","Verbs"],
+["Do","انجام دادن","Verbs"],
+["Make","ساختن","Verbs"],
+["Go","رفتن","Verbs"],
+["Come","آمدن","Verbs"],
+["Get","گرفتن","Verbs"],
+["Give","دادن","Verbs"],
+["Take","گرفتن","Verbs"],
+["See","دیدن","Verbs"],
+["Look","نگاه کردن","Verbs"],
+["Watch","تماشا کردن","Verbs"],
+["Hear","شنیدن","Verbs"],
+["Listen","گوش دادن","Verbs"],
+["Speak","صحبت کردن","Verbs"],
+["Say","گفتن","Verbs"],
+["Tell","گفتن","Verbs"],
+["Ask","پرسیدن","Verbs"],
+["Answer","پاسخ دادن","Verbs"],
+["Know","دانستن","Verbs"],
+["Think","فکر کردن","Verbs"],
+["Understand","فهمیدن","Verbs"],
+["Remember","به یاد آوردن","Verbs"],
+["Forget","فراموش کردن","Verbs"],
+["Want","خواستن","Verbs"],
+["Need","نیاز داشتن","Verbs"],
+["Like","دوست داشتن","Verbs"],
+["Love","دوست داشتن","Verbs"],
+["Hate","متنفر بودن","Verbs"],
+["Use","استفاده کردن","Verbs"],
+["Find","پیدا کردن","Verbs"],
+["Help","کمک کردن","Verbs"],
+["Try","تلاش کردن","Verbs"],
+["Start","شروع کردن","Verbs"],
+["Stop","متوقف کردن","Verbs"],
+["Open","باز کردن","Verbs"],
+["Close","بستن","Verbs"],
+["Put","گذاشتن","Verbs"],
+["Keep","نگه داشتن","Verbs"],
+["Bring","آوردن","Verbs"],
+["Buy","خریدن","Verbs"],
+["Sell","فروختن","Verbs"],
+["Pay","پرداخت کردن","Verbs"],
+["Work","کار کردن","Verbs"],
+["Play","بازی کردن","Verbs"],
+["Run","دویدن","Verbs"],
+["Walk","راه رفتن","Verbs"],
+["Move","حرکت کردن","Verbs"],
+["Live","زندگی کردن","Verbs"],
+["Stay","ماندن","Verbs"],
+["Wait","منتظر ماندن","Verbs"],
+["Meet","ملاقات کردن","Verbs"],
+["Call","تماس گرفتن","Verbs"],
+["Send","فرستادن","Verbs"],
+["Receive","دریافت کردن","Verbs"],
+["Read","خواندن","Verbs"],
+["Write","نوشتن","Verbs"],
+["Learn","یاد گرفتن","Verbs"],
+["Study","مطالعه کردن","Verbs"],
+["Teach","آموزش دادن","Verbs"],
+["Change","تغییر دادن","Verbs"],
+["Choose","انتخاب کردن","Verbs"],
+["Decide","تصمیم گرفتن","Verbs"],
+["Explain","توضیح دادن","Verbs"],
+["Show","نشان دادن","Verbs"],
+["Build","ساختن","Verbs"],
+["Break","شکستن","Verbs"],
+["Cut","بریدن","Verbs"],
+["Cook","پختن","Verbs"],
+["Drink","نوشیدن","Verbs"],
+["Eat","خوردن","Verbs"],
+["Sleep","خوابیدن","Verbs"],
+["Wake","بیدار شدن","Verbs"],
+["Drive","رانندگی کردن","Verbs"],
+["Ride","سوار شدن","Verbs"],
+["Travel","سفر کردن","Verbs"],
+["Visit","بازدید کردن","Verbs"],
+["Win","برنده شدن","Verbs"],
+["Lose","باختن","Verbs"],
+["Improve","بهبود دادن","Verbs"],
+
+
+/* ADJECTIVES 431-470 */
+
+["Good","خوب","Adjectives"],
+["Bad","بد","Adjectives"],
+["Big","بزرگ","Adjectives"],
+["Small","کوچک","Adjectives"],
+["Long","بلند / طولانی","Adjectives"],
+["Short","کوتاه","Adjectives"],
+["Tall","قدبلند","Adjectives"],
+["Young","جوان","Adjectives"],
+["Old","پیر / قدیمی","Adjectives"],
+["New","جدید","Adjectives"],
+["Easy","آسان","Adjectives"],
+["Difficult","سخت","Adjectives"],
+["Hard","سخت","Adjectives"],
+["Important","مهم","Adjectives"],
+["Different","متفاوت","Adjectives"],
+["Same","یکسان","Adjectives"],
+["Beautiful","زیبا","Adjectives"],
+["Interesting","جالب","Adjectives"],
+["Boring","خسته‌کننده","Adjectives"],
+["Happy","خوشحال","Adjectives"],
+["Sad","ناراحت","Adjectives"],
+["Angry","عصبانی","Adjectives"],
+["Tired","خسته","Adjectives"],
+["Busy","مشغول","Adjectives"],
+["Free","آزاد","Adjectives"],
+["Strong","قوی","Adjectives"],
+["Weak","ضعیف","Adjectives"],
+["Fast","سریع","Adjectives"],
+["Slow","آهسته","Adjectives"],
+["Rich","ثروتمند","Adjectives"],
+["Poor","فقیر","Adjectives"],
+["Clean","تمیز","Adjectives"],
+["Dirty","کثیف","Adjectives"],
+["Safe","امن","Adjectives"],
+["Dangerous","خطرناک","Adjectives"],
+["Ready","آماده","Adjectives"],
+["Successful","موفق","Adjectives"],
+["Famous","مشهور","Adjectives"],
+["Popular","محبوب","Adjectives"],
+["Special","خاص","Adjectives"],
+
+
+/* EVERYDAY 471-500 */
+
+["Always","همیشه","Everyday"],
+["Usually","معمولاً","Everyday"],
+["Often","اغلب","Everyday"],
+["Sometimes","گاهی","Everyday"],
+["Never","هرگز","Everyday"],
+["Already","قبلاً","Everyday"],
+["Again","دوباره","Everyday"],
+["Together","با هم","Everyday"],
+["Almost","تقریباً","Everyday"],
+["Really","واقعاً","Everyday"],
+["Very","خیلی","Everyday"],
+["Too","بیش از حد / همچنین","Everyday"],
+["Also","همچنین","Everyday"],
+["Only","فقط","Everyday"],
+["Just","فقط / همین الان","Everyday"],
+["Maybe","شاید","Everyday"],
+["Perhaps","شاید","Everyday"],
+["Because","زیرا","Everyday"],
+["Before","قبل از","Everyday"],
+["After","بعد از","Everyday"],
+["First","اول","Everyday"],
+["Last","آخرین","Everyday"],
+["Next","بعدی","Everyday"],
+["Early","زود","Everyday"],
+["Late","دیر","Everyday"],
+["Here","اینجا","Everyday"],
+["There","آنجا","Everyday"],
+["Inside","داخل","Everyday"],
+["Outside","بیرون","Everyday"],
+["Above","بالا","Everyday"],
+["Below","پایین","Everyday"],
+["Around","اطراف","Everyday"],
+["About","درباره","Everyday"],
+["With","با","Everyday"],
+["Without","بدون","Everyday"],
+["For","برای","Everyday"],
+["From","از","Everyday"],
+["To","به","Everyday"],
+["And","و","Everyday"],
+["But","اما","Everyday"],
+["Or","یا","Everyday"],
+["If","اگر","Everyday"],
+["So","بنابراین","Everyday"],
+["Then","سپس","Everyday"],
+["Why","چرا","Everyday"],
+["What","چه چیزی","Everyday"],
+["Where","کجا","Everyday"],
+["When","چه زمانی","Everyday"],
+["Who","چه کسی","Everyday"],
+["How","چگونه","Everyday"]
+];
+
+
+/* ==========================================
+   EXAMPLE SENTENCES
+========================================== */
+
+function createExample(word, category) {
+
+    let examples = {
+
+        "Daily Life":
+            "I use this word in my daily life.",
+
+        "School":
+            "I learn this word at school.",
+
+        "Technology":
+            "I use technology every day.",
+
+        "People":
+            "This word is related to people.",
+
+        "Food":
+            "I like this food.",
+
+        "Travel":
+            "I use this word when I travel.",
+
+        "Nature":
+            "I can see this in nature.",
+
+        "Verbs":
+            "I can use this verb in a sentence.",
+
+        "Adjectives":
+            "This is a useful adjective.",
+
+        "Everyday":
+            "I use this word every day."
+
+    };
+
+    return examples[category];
+
+}
+
+
+/* ==========================================
+   CREATE WORD CARDS
+========================================== */
+
+function displayWords(list) {
+
+    let container =
+        document.getElementById("wordContainer");
+
+    container.innerHTML = "";
+
+    list.forEach(function(item, index) {
+
+        let word = item[0];
+        let meaning = item[1];
+        let category = item[2];
+
+        let example =
+            createExample(word, category);
+
+        let card =
+            document.createElement("div");
+
+        card.className = "word";
+
+        card.setAttribute(
+            "data-category",
+            category
+        );
+
+        card.innerHTML = `
+
+            <div class="word-number">
+                Word ${vocabulary.indexOf(item) + 1}
+            </div>
+
+            <span class="category">
+                ${category}
+            </span>
+
+            <h2>
+                ${word}
+            </h2>
+
+            <div class="meaning">
+                🇮🇷 ${meaning}
+            </div>
+
+            <div class="example">
+                💬 ${example}
+            </div>
+
+            <div class="translation">
+                📌 English vocabulary practice
+            </div>
+
+            <div class="buttons">
+
+                <button
+                    class="speak-button american"
+                    onclick="speakWord('${word}', 'en-US')">
+
+                    🇺🇸 American
+
+                </button>
+
+                <button
+                    class="speak-button british"
+                    onclick="speakWord('${word}', 'en-GB')">
+
+                    🇬🇧 British
+
+                </button>
+
+            </div>
+
+        `;
+
+        container.appendChild(card);
+
+    });
+
+    updateCounter(list.length);
+
+}
+
+
+/* ==========================================
+   SPEAK
+========================================== */
+
+function speakWord(text, language) {
+
+    let speech =
+        new SpeechSynthesisUtterance(text);
+
+    speech.lang = language;
+
+    speech.rate = 0.85;
+
+    speech.pitch = 1;
+
+    window.speechSynthesis.cancel();
+
+    window.speechSynthesis.speak(speech);
+
+}
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+function searchWords() {
+
+    let input =
+        document
+        .getElementById("searchBox")
+        .value
+        .toLowerCase()
+        .trim();
+
+    let filtered =
+        vocabulary.filter(function(item) {
+
+            return (
+                item[0].toLowerCase().includes(input) ||
+                item[1].toLowerCase().includes(input) ||
+                item[2].toLowerCase().includes(input)
+            );
+
+        });
+
+    displayWords(filtered);
+
+    if (filtered.length === 0) {
+
+        document
+        .getElementById("noResult")
+        .style.display = "block";
+
+    } else {
+
+        document
+        .getElementById("noResult")
+        .style.display = "none";
+
+    }
+
+}
+
+
+/* ==========================================
+   CATEGORY FILTER
+========================================== */
+
+function filterCategory(category) {
+
+    let filtered =
+        vocabulary.filter(function(item) {
+
+            return item[2] === category;
+
+        });
+
+    displayWords(filtered);
+
+    document
+    .getElementById("searchBox")
+    .value = "";
+
+    document
+    .getElementById("noResult")
+    .style.display = "none";
+
+}
+
+
+/* ==========================================
+   SHOW ALL
+========================================== */
+
+function showAll() {
+
+    displayWords(vocabulary);
+
+    document
+    .getElementById("searchBox")
+    .value = "";
+
+    document
+    .getElementById("noResult")
+    .style.display = "none";
+
+}
+
+
+/* ==========================================
+   COUNTER
+========================================== */
+
+function updateCounter(number) {
+
+    document
+    .getElementById("count")
+    .innerText = number;
+
+}
+
+
+/* ==========================================
+   START
+========================================== */
+
+displayWords(vocabulary);
+
+
+</script>
 
 </body>
 </html>
